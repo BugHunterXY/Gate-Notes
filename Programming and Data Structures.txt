@@ -30,7 +30,9 @@ for example : driver  and kernal
 
 procedrue-oriented programming language:
 A procedure means function, method,routine,subroutine etc.
-A procedural language specifies a series of steps for the program to solve the program
+A procedural language means 
+	1.steps for the program to solve the any issue/program or 
+	2.step follow to perform any task
 A procedural language break the program into funtions, data structure etc.
 C is a procedural language 
 In C , variables and function prototypes must be declared before being used
@@ -133,4 +135,29 @@ Explain this code :
 #include <stdio.h>
 It is preprocessor directive
 it tells the compiler to include the standard input/output library
+this library Provides Functions for input and output operation 
+such as 
+	1.printf
+	2.scanf
+	
+int main(){
+This line start the 'main' function
+In C Every Program must have 'main' function and execution begins from here 
+
+printf ("Hello C program");
+printf is a function used to show the output
+it prints the specified string to standard output
+
+return 0;
+this is the return statement 
+it tellsthe program to return an exit status to operating system
+in case 0 is returned : It indicates that program executed successfully
+in case non-zero returned : It indicates diffrent type of error
+
+}
+This is closing brace
+tells that end of the 'main' funtion 
+
+
+
 
