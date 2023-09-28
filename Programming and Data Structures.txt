@@ -1,0 +1,136 @@
+			Programming and Data Structures
+
+Programming in C
+
+developed by : Dennis Ritchie
+developed at AT Bell laboratries AT&T (American Telephone & Telegraph)
+location : USA
+
+
+c programing language is used for creating system application 
+that directly intract with the hardware devices such as driver, kernal etc.
+
+
+C programing language is base for programming language that's why it is known as mother Language
+
+it can be defined as :
+
+Mother language :
+it is modern programming language because most of compilers,JVMs, Kernals, etc are written in C language
+Most of the programming language are follow C syntax
+for example : C++, c#,java
+it provide core concept of  Array, String,funtions,file handling etc.
+that is being used in many language like C++, java,C#
+
+system programming language :
+A system programming language is used to create the system software.
+C language is system programming language 
+Because it can be used to low-level programming 
+for example : driver  and kernal
+
+procedrue-oriented programming language:
+A procedure means function, method,routine,subroutine etc.
+A procedural language specifies a series of steps for the program to solve the program
+A procedural language break the program into funtions, data structure etc.
+C is a procedural language 
+In C , variables and function prototypes must be declared before being used
+
+structured programming language
+A structured programming language is the subset of procedural language
+Structure means -- break and program into parts or blocks
+So that it may be easy to understand
+here blocks means functions
+
+mid level programming language 
+C is  middle-level language beacause it support both feature 
+1. low level language
+2. high level language
+
+C program converted into assembly code, 
+It support pointer airthmetic(it is the feature of low level language)
+but it is machine independent (it is the feature of high level language)
+
+c program example 
+
+save as main.c
+
+#include<stdio.h>
+int main(){
+printf("this is C program");
+return 0;
+}
+
+Features of c programming language 
+
+Simple 
+Portable
+Mid level language 
+structured programming language
+Rich library
+Memory Management 
+Fast speed
+Pointer
+Recursion
+Extensible
+
+Simple : 
+C programming language is Structured programming language 
+It follows Structured Approach 
+Here Structured Approach means Break the program into parts
+Structured Approach means it Contain Set of library and data types etc.
+
+Portable :
+C Can be executed in diffrent machines 
+Example : if you write a code in your machine it can be Write in any machine without any change in single line 
+
+mid level programming language:
+low level language because it is used to develop system applications suc as kernal,driver etc.
+high level language beacause it is used to support the feature of High level language 
+
+here it means C programming language support both low level as well as high level laguage feature that is wehy it is called as mid level language 
+
+Structured Programming language : we have discuss it previously 
+Structured progragmming language bacause we can break the prpgram into parts 
+using funtions
+due to this it is easy to understand and modify the code 
+Because Functions are reusable
+
+Rich library :
+C provode Lots of inbuild functions that makes developement fast.
+
+Memory Management :
+C Programming support dynamic memory allocation
+In C we can free the alocated memory at any time by calling free() function.
+
+Speed :
+The compilation and Execution time of C is very fast 
+
+Pointer :
+C provides a the feature of pointer
+We can directly initract with the memory by using pointer.
+We can use pointer for memory, structure, funtions, array etc.
+
+Recursion :
+when a function call it self within a funtion.
+it provides code reusability for every funtion.
+Recursion enables us to use the approach for backtracking.
+
+Extensible :
+C language is Extensible 
+it can easily adopt new features
+
+-------------------------------------------------
+First C program 
+
+#include <stdio.h>
+int main(){
+printf("Hello C language");
+return 0;
+}
+
+Explain this code :
+
+#include <stdio.h>
+It is preprocessor directive
+it tells the compiler to include the standard input/output library
+
