@@ -86,10 +86,10 @@ C Can be executed in diffrent machines
 Example : if you write a code in your machine it can be Write in any machine without any change in single line 
 
 mid level programming language:
-low level language because it is used to develop system applications suc as kernal,driver etc.
+low level language because it is used to develop system applications such as kernal,driver etc.
 high level language beacause it is used to support the feature of High level language 
 
-here it means C programming language support both low level as well as high level laguage feature that is wehy it is called as mid level language 
+here it means C programming language support both low level as well as high level laguage feature that is why it is called as mid level language 
 
 Structured Programming language : we have discuss it previously 
 Structured progragmming language bacause we can break the prpgram into parts 
@@ -130,6 +130,7 @@ printf("Hello C language");
 return 0;
 }
 
+----------------------------------------------------------------------------
 Explain this code :
 
 #include <stdio.h>
@@ -158,6 +159,248 @@ in case non-zero returned : It indicates diffrent type of error
 This is closing brace
 tells that end of the 'main' funtion 
 
+-----------------------------------------------------------------------------
 
+compilation ?
+it is the process of converting the source code into object code 
+it is done with the help of compiler
+The compiler check the source code for syntactical or structural error
+if source code is error free then it generate the object code
+
+---------------------------------Example------------------------------
+--------------------source code -------> Object code-------------------------
+
+#include <stdio.h>			01000000000
+int main(){				01111111111
+printf("Hello C language");		01010111100
+return 0;				00000111101
+}					11111111111
+
+-----------------------------------------------------------------------------
+
+the compilation process divided into four steps
+	1.pre-processing
+	2.compiling
+	3.Assembling
+	4.Linking
+
+1. pre-processor :A pre-processor takes the source code as a input  and remove all the comments from the source code 
+2.pre-processor interpret the code from pre-processor directive
+	Example :
+	if <stdio.h> directive is available in the program then pre-processor 			interpret the directive and replace this directive with content of the stdio.h 	file
+	
+	
+-------------program phases before transformed into executable form -----------
+			  Source code	(the source code first goes to 
+				|	pre-processor )
+				|
+				|
+				+
+			pre-processor	(pre-processor Expend this code)
+				|	(Once the code Expended it pass
+				|	to compiler)
+				|	(Expended code)
+				|
+				+
+			    Compiler	(compiler convert The Expended code 
+			    	|	into assembly code)
+			    	|
+			    	|	(assembly code)
+			    	|
+			    	+
+			    Assembler	(Assembler convert the assembly 
+			    	|	code into Object code)
+			    	|
+			    	|	(Object code)
+			    	|
+			    	+
+   Other object files----+    Linker	+---Libraries
+	(The main purpose of Linker is to combine multiple object files 
+	and resolve the reference b/w them and create a single executable file)
+			    	|
+	(The linker resolve the symbols such as function and global,variable)
+	(It Ensure that symbol defined once and if not defined linker 
+	report "Undefined Reference" error)	
+			    	|
+	(library inclusion : the linker use the function or code from external
+	library in executable file)
+				|
+			    	+
+			    Executable code
+			    
+-------------------------------------------------------------------------------
+After the Executable code is created the loader will load the executable file for execution
+-------------program phases before transformed into executable form------------
+(hello.c)	  Source code	(the source code first goes to 
+				|	pre-processor )
+				|
+				|
+				+
+			pre-processor	(pre-processor Expend this code)
+				|	(Once the code Expended it pass
+				|	to compiler)
+	(hello.i)		|	(Expended code)
+				|
+				+
+			    Compiler	(compiler convert The Expended code 
+			    	|	into assembly code)
+			    	|
+	(hello.s)	    	|	(assembly code)
+			    	|
+			    	+
+			    Assembler	(Assembler convert the assembly 
+			    	|	code into Object code)
+			    	|
+		    	|	(Object code)
+			    	|
+			    	+
+   Other object files----+    Linker	+---Libraries
+	(The main purpose of Linker is to combine multiple object files 
+	and resolve the reference b/w them and create a single executable file)
+			    	|
+	(The linker resolve the symbols such as function and global,variable)
+	(It Ensure that symbol defined once and if not defined linker 
+	report "Undefined Reference" error)	
+			    	|
+	(library inclusion : the linker use the function or code from external
+	library in executable file)
+				|
+			    	+
+	(hello.exe)	    Executable code
+			    	|
+			    	|
+			    	+
+			    Loader
+			    	|
+			    	|
+			    	+
+			    Execution
+-------------------------------------------------------------------------------
+printf() & scanf() : these are the functions used to take input and get the output in c language
+bothe are inbuilt in library funtion
+library that defined in stdio.h (header file)
+-------------------------------------------------------------------------------
+printf() : 
+used to get the output statement to console
+syntax :
+printf("format string", argument_list);
+format string : 
+	1.%d(integer)
+	2.%c(character)
+	3.%s(string)
+	4.%f(float)
+
+scanf() :
+used to get read the input data from the console
+syntax :
+scanf("format string", argument_list);
+-------------------------------------------------------------------------------
+-----------------program to print cube of given no---------------------------
+---------save this fileas cube.c--and run in compiler------------------------
+			or
+----------directly run in online compiler by paste this code-----------------
+
+#include<stdio.h>
+int main(){
+int number;
+printf("Enter no : ");
+scanf("%d",&number);
+printf("cube of number is : %d",number*number*number);
+return 0;
+}
+--------------------------------------------------------------------------------
+-------------------program to sum of two number-------------------------------
+---------save it as sum.c---and run in compiler-------------------------------
+-----------directly copy paste this ocde in online compiler-------------------
+
+#include <stdio.h>
+int main(){
+int num1;
+int num2;
+printf("Enter value 1 : ");
+scanf("%d",&num1);
+printf("Enter value 2 : ");
+scanf("%d",&num2);
+printf("sum of two number : %d ", num1+num2);
+return 0;
+}
+--------------------------------------------------------------------------------
+variables : variable are the memory location
+it is used to store the data
+its value can be changed and can be reused many times
+
+----------------------rules for defining variables--------------------------
+A variable can have alphabets,digits, and underscore.
+Variable name can only starts with alphabet and underscore only
+no white space is allowed to start variable name
+A varibale name must not be reserved words or keywords
+	Example : int,float etc.  
+	
+-----------------Valid Variable names------------------------------------------
+int a;
+int _am;
+int a30;
+-------------------------------------------------------------------------------
+-------------------invalid variable names--------------------------------------
+int 2;
+int a b;
+int long;
+-------------------------------------------------------------------------------
+------------------types of variables in c--------------(LEAGS)-----------------
+	1.Local variables
+	2.Global varibales
+	3.Static variables
+	4.Automatic variables
+	5.External variables
+	
+1.local Variables :
+A variable declared inside the function block is called local variable	
+it must decalred start of the block 
+it must be initilize before it used 
+	Example :	
+			#include<stdio.h>
+			void function1(){
+			int x=10; //local variable
+			}
+			int main(){
+			function();
+			return 0;
+			}
+2.Global variables :
+A varibale decalred outside the funtion block is called Global Variables
+Any function can change its value for global variable
+it is available to all functions
+it must be declared at start of the block 
+	Example :	
+			#include<stdio.h>
+			int globle_value=20;	//global Variable
+			void function(){
+			int local_value=30;	//local Variable
+			printf("%d\n",globle_value);
+			printf("%d\n",local_value);
+			}
+			int main(){
+			function();
+			return 0;
+			}
+3.Static Variable :
+A variable decalred with static keyword is called static variable
+static variable is like memory box which hold the value even after close the funtion
+means when you call the funtions again you will get the same value as you stored last time 
+
+	Example :
+		#include<stdio.h>
+		void function(){
+		int x=10;	//local variable
+		static int y=20; //static variable
+		x = x + 1;
+		y = y + 1;
+		printf("local variable : %d\n" ,x);
+		printf(" Static variable : %d\n" ,y);
+		}
+		int main(){
+		    function();
+		    return 0;
+		}
 
 
