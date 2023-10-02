@@ -151,7 +151,7 @@ it prints the specified string to standard output
 
 return 0;
 this is the return statement 
-it tellsthe program to return an exit status to operating system
+it tells the program to return an exit status to operating system
 in case 0 is returned : It indicates that program executed successfully
 in case non-zero returned : It indicates diffrent type of error
 
@@ -231,7 +231,7 @@ the compilation process divided into four steps
 -------------------------------------------------------------------------------
 After the Executable code is created the loader will load the executable file for execution
 -------------program phases before transformed into executable form------------
-(hello.c)	  Source code	(the source code first goes to 
+	(hello.c)	  Source code	(the source code first goes to 
 				|	pre-processor )
 				|
 				|
@@ -277,7 +277,7 @@ After the Executable code is created the loader will load the executable file fo
 			    Execution
 -------------------------------------------------------------------------------
 printf() & scanf() : these are the functions used to take input and get the output in c language
-bothe are inbuilt in library funtion
+both are inbuilt in library funtion
 library that defined in stdio.h (header file)
 -------------------------------------------------------------------------------
 printf() : 
@@ -402,5 +402,198 @@ means when you call the funtions again you will get the same value as you stored
 		    function();
 		    return 0;
 		}
+		
+Automatic Variable:		
+All variable decalred inside the block, are automatic variables by default
+we can declare Automatic variable explicitly using auto keywords
+	Example :
+		#include<stdio.h>
+		void main(){
+		int x = 10;		//local variable
+		auto int y = 20;	//automatic variable
+		printf("%d \n",x);
+		printf("%d \n",y);
+		return 0;
+		}
+External Variable : 
+It is declared outside of any function
+we can refer External Variable as Global Variable because it can be modified and accessed from multiple function within the same source file 
+To declare External variable we use extern keyword
+
+	syntax :
+		extern int x = 10;	//extern variable
+		
+	Example :
+		#include "myfile.h"
+		#include <stdio.h>
+		void printvalue(){
+		printf("Global variable : %d", global_variable);
+		}
+-------------------------------------------------------------------------------
+----------------------------Data types in C------------------------------------
+
+Data type specifies that type of data stored in variable 
+such as : integer, floating,character etc.
+
+
+			Data type	
+			/  /\  \
+		       /  /  \  \		1. basic Data types:
+		      /  /    \	 \		basic data types are 
+		     /  /      \  \		1.integer based
+		    /  /        \  \		2.floating point based
+	           /  /          \  \		the memory size of
+                  /  /            \  \		basic data type change 
+                 /  /              \  \		according to 32 bit or
+                /  /                \  \	64 bit operating system
+               /  /                  \  \
+              /  2.Derived 3.Enumeration \
+             /       |           |        \		2.Derived Data type:
+	1. basic     |		 |	 4.void		These data type give
+	     |       |-array     |       |		programmers the ability
+	     |-int   |-pointer   |-enum  |-void		to handle hetrogeneous 
+	     |-char  |-structure                   	data
+	     |-float |-union                  		-Directly modify memory
+	     |-double                   		-build complicated data
+	     		                       		structure
+	                   
+--------------------------------------------------------------------------------	        
+Enumeration : It is the set of constants
+it represent a collection of connected values 
+enumeration  data type (enum).
+
+#include<stdio.h>
+//Define an Enumeration for day of the week 
+enum DayOfWeek{
+Monday,
+Tuesday,
+Wednesday,
+Thrusday,
+Friday,
+Saturday,
+Sunday,
+};
+int main(){
+//declare a variable of type enum DayOfWeek
+enum DayOfWeek today;
+//Assign a value form the enumeration
+today = Wednesday;
+//Accessing the enumeration value
+printf("Today is %d\n",today);
+return 0;
+}	     
+--------------------------------------------------------------------------------		     
+Basic data type:
+int : it takes 4 bytes and its range is -32768 to 32767 
+char : it represent indivisual character value
+it holds ASCII or UTF-8 encoding scheme characters
+		such as letter
+			number
+			symbols
+			commas     
+there are 256 character  represented by single char which takes one bytes of the memory 
+character such as 'A','b''5' or '$' are enlclosed in single quotes
+		it takes 1 bytes and range is -128 to 127
+float :	it takes 4 bytes
+double : it takes 8 bytes
+long double :it takes 10 bytes
+--------------------------Structure data type----------------------------------
+structure : it is a drived  data type 
+it enable the creation of composite data type
+it allows the grouping of any data types under a single name 
+
+#include<stdio.h>
+#include<string.h>
+//define structure  representing person
+struct person{
+char name[50];
+int age;
+float height;
+};
+int main(){
+//Declare a variable of type struct person
+struct person person1;
+//assign value to structure members
+strcpy(person1.name,"goli");
+person1.age;30;
+person1.height=1.8;
+//accessing the structure member
+printf("name : %s\n", person1.name);
+printf("Age : %d\n", person1.age);
+printf("height : %f\n", person1.height);
+return 0;
+}
+
+Union: it is a drived data type
+union anables you to store various data type in the same memory address
+
+--------------------------------------------------------------------------------
+in structure : Each member has a seperate memory space
+--------------------------------------------------------------------------------
+In Union : All member  share a single memory space
+--------------------------------------------------------------------------------
+
+#include<stdio.h>
+//define a union representing a numeric value 
+union NumericValue{
+int intValue;
+float floatValue;
+char stringValue[20];
+};
+int main(){
+//Declare a variable of type union NumericValue
+union NumericValue value;
+//assign a value to the union
+value.intValue=42;
+//accessing the union member
+printf("integer value ; %d\n", value.intValue);
+//assegning a diffrent value to the union
+value.floatValue = 3.14;
+//Accessing the union members
+printf("Float Value : %.2f\n",value.floatValue);
+return 0;
+}
+--------------------------------------------------------------------------------
+void data type : The void data type in c language is used to donate the lack of a perticular type. 
+1.Function return types
+2.Function parameters
+3.Pointer
+
+Function Return type :It is a Void return type funtion
+it doesn't produce  value
+a void function execute a task and ends rather then returning a value
+
+void prinHello(){
+printf("Hello world");
+}
+
+Function parameters : It is a void return type function
+it used to indicate that function accepts no arguments
+
+Example :
+	void processinput(void){
+	/*Function logic*/
+	}
+Pointer :
+Any address can be stored in a pointer of type void*
+
+Example :
+	void* dataPtr;
+
+void data type is helpfull for defining function that don,taccept any arguments
+
+--------------------------------------------------------------------------------
+Keyword :
+Keyword is a reserved words
+you can't use it as variable name or constant name 
+There are 32 keywords in C language
+
+A list of 32 keywords in the c language is given below:
+
+auto	break	case	char	const	continue	default	do
+double	else	enum	extern	float	for	goto	if
+int	long	register	return	short	signed	sizeof	static
+struct	switch	typedef	union	unsigned	void	volatile	while
+--------------------------------------------------------------------------------
 
 
