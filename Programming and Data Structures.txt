@@ -89,7 +89,7 @@ mid level programming language:
 low level language because it is used to develop system applications such as kernal,driver etc.
 high level language beacause it is used to support the feature of High level language 
 
-here it means C programming language support both low level as well as high level laguage feature that is why it is called as mid level language 
+here it means C programming language support both low level as well as high level language feature that is why it is called as mid level language 
 
 Structured Programming language : we have discuss it previously 
 Structured progragmming language bacause we can break the prpgram into parts 
@@ -168,13 +168,13 @@ The compiler check the source code for syntactical or structural error
 if source code is error free then it generate the object code
 
 ---------------------------------Example------------------------------
---------------------source code -------> Object code-------------------------
+-----source code ------------------------------> Object code--------------------
 
-#include <stdio.h>			01000000000
-int main(){				01111111111
-printf("Hello C language");		01010111100
-return 0;				00000111101
-}					11111111111
+#include <stdio.h>				01000000000
+int main(){					01111111111
+printf("Hello C language");	------->	01010111100
+return 0;					00000111101
+}						11111111111
 
 -----------------------------------------------------------------------------
 
@@ -187,7 +187,7 @@ the compilation process divided into four steps
 1. pre-processor :A pre-processor takes the source code as a input  and remove all the comments from the source code 
 2.pre-processor interpret the code from pre-processor directive
 	Example :
-	if <stdio.h> directive is available in the program then pre-processor 			interpret the directive and replace this directive with content of the stdio.h 	file
+	if <stdio.h> directive is available in the program then pre-processor interpret the directive and replace this directive with content of the stdio.h file
 	
 	
 -------------program phases before transformed into executable form -----------
@@ -528,7 +528,7 @@ Union: it is a drived data type
 union anables you to store various data type in the same memory address
 
 --------------------------------------------------------------------------------
-in structure : Each member has a seperate memory space
+In structure : Each member has a seperate memory space
 --------------------------------------------------------------------------------
 In Union : All member  share a single memory space
 --------------------------------------------------------------------------------
@@ -580,7 +580,7 @@ Any address can be stored in a pointer of type void*
 Example :
 	void* dataPtr;
 
-void data type is helpfull for defining function that don,taccept any arguments
+void data type is helpfull for defining function that don,t accept any arguments
 
 --------------------------------------------------------------------------------
 Keyword :
@@ -590,10 +590,130 @@ There are 32 keywords in C language
 
 A list of 32 keywords in the c language is given below:
 
-auto	break	case	char	const	continue	default	do
-double	else	enum	extern	float	for	goto	if
-int	long	register	return	short	signed	sizeof	static
-struct	switch	typedef	union	unsigned	void	volatile	while
+auto	break	case	   char	    const	continue   default	do
+double	else	enum	   extern   float	for	   goto		if
+int	long	register   return   short	signed	   sizeof	static
+struct	switch	typedef	   union    unsigned	void	   volatile	while
 --------------------------------------------------------------------------------
 
+Identifier : Identifier Represent name in the program
+identifier means name of funtions,variable,method,struct and all reserved words 
+define by using identifier
 
+types of Identifier
+	1.Internal Identifiers (which can't used for External Linkage, internal identifier are --Local variable).
+	2.External Identifiers (which is used for External linkage known as External Identifier, External Identifier are Function name, Global Variable).
+	
+Comments :
+comments are used in code to provide the proper information aout line of code one by one 
+it is of two type :
+	1. Single line comments
+	2. Multi-line comments
+	
+Single line comment : 
+Represented by dash //
+
+Example :
+	#include<stdio.h>
+	int main(){
+	//here is variable declare
+	int num1 = 12;
+	printf("num %d\n",num1);
+	return 0;
+	}
+	
+Multi-line comment :
+multi-line comment provide slash astrick \*..*\
+it can occupy many line of code 
+
+Example :
+	#include<stdio.h>
+	/*
+	Here i will declare variable first then i will get that variable as a output 
+	*/
+#include<stdio.h>
+	int main(){
+	//here is variable declare
+	int num1 = 12;
+	printf("num %d\n",num1);
+	return 0;
+	}
+ 
+/*comments will make easy to understand the code to each and every developer*/
+--------------------------------------------------------------------------------
+--------------------------------C format specifier-----------------------------
+
+the format specifier is a string  used in the formatted input and output functions
+the format string always starts with  a '%' character
+
+%d or %i -- It is used to print the signed integer value 
+	    here it meansthat variable can hold both positive and negetive
+	    value 
+
+%u -- It is used to print unsigned integer value 
+	here in signed integer means that variable can only hold positive value
+	
+	Example :
+		#include<stdio.h>
+		int main(){
+		int a = 10;
+		int b = -10;
+		printf("value of a : %u",a);
+		printf("value of b : %u",b);
+		return 0;
+		}
+		
+	Output :
+		a = 10
+		b = 4294967286	
+	
+%o -- It is used to print the octal unsigned integer 
+	where octal integer value always starts with a 0 value
+	
+	Example :
+		#include<stdio.h>
+		int main(){
+		int a = 0100;
+		printf("octal value of a is : %o",a);
+		printf("integer value of a is : %d",a);
+		return 0;
+		}
+		
+Octal value to integer value 
+ example : 100 = 64						
+octal means base 8  so 
+	(8*8)+(8*0)+(8*0) = 64
+integer value to octal value 
+divide value by 8 until you get 0 reminder 
+100 / 8 = Quotient = 12 and reminder = 4 
+12 / 8 = Quotient = 1  and reminder = 4
+1 / 8 = Quotient = 0 and reminder = 1
+Now the octal no is 144
+
+
+200 / 8 = Quotient 
+	
+%x -- it is used to print hexadecimal unsigned interger
+	Where the hexadecimal integer value always start with 0x value
+	in this alpjhabetical characters areprinted in small letter such as a,b,c etc.
+
+%X -- It is used to print the hexadecimal unsigned integer 
+	In  this alphabetical character print in uppercase such as A,B,C etc.	 
+
+%f -- It is used for printing the decimal floating point values.
+	By default it print 6 value after '.'.
+
+%e/%E -- It is used for scientific notation 
+	It is also known as  mantissa or Exponent
+	
+%g -- it is used to print decimal floating point value
+	It is used the fixed precision
+	the value after the decimal in input would be exectly same as value in the output	
+	
+%p -- It is used to print the address in the hexdecimal form 
+
+%c -- It is used to print unsigned character
+
+%s -- it is used to print the string 
+
+%ld -- it is used to print the long signed integer  value 	
